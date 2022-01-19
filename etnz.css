@@ -6,11 +6,6 @@
     outline: none;
 }
 
-body, html{
-    width: 100%;
-    height: 100%;
-}
-
 body {
 font-family: 'Oswald', sans-serif;
 background: #fff;
@@ -27,7 +22,7 @@ header{
     padding: 0;
 }
 
-.nav{
+.navbar {
     position: fixed;
     min-width: 1920px;
     margin:-5px;
@@ -36,11 +31,28 @@ header{
     background-color: #ffffff;
 }
 
-.nav li{
+.navbar li{
     display: inline;
     margin-left: 50px;
     font-size: 24px;
     padding: 20px;
+}
+
+input[type=text] {
+  background-color: white;
+  background-repeat: no-repeat;
+  border: 3px solid rgba(60, 60, 60, 0.5);
+  font-size: 24px;
+  margin:35px;
+  padding-left: 40px;
+  width: 200px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 250px;
+  border: 3px solid #555;
 }
 
 .title-block{
@@ -93,4 +105,17 @@ font-size: 100px;
 .js {
     width: 80%;
     margin-bottom: 80px;
+}
+
+.icons{
+    margin-left: 1400px;
+}
+
+.fa{
+    margin-right: 50px;
+    padding: 10px;
+    font-size: 30px;
+    width: 30px;
+    text-decoration: none;
+    border-radius: 20%;
 }

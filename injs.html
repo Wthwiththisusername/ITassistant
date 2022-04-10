@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link type="image/x-icon" href="images/logo.ico" rel="shortcut icon">
+        <title>ITassistant</title>
+        <link rel="stylesheet" type="text/css" href="css.css">
+    </head>
+
+    <body>
+        <header>
+            <div class="sidebar" id="mySidebar">
+                <input type="text" id="mySearchbar" onkeyup="finder()" placeholder="Search..." title="programming">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">&times;</a>
+                <audio id="audio" src="C:\Users\User\Downloads\44843^mouseclick.mp3"></audio>
+                <div id="mySearches">
+                    <li><a href="#">Introduction to JavaScript</a></li>
+                    <li><a href="#">Statements</a></li>
+                    <li><a href="#">Operators</a></li>
+                    <li><a href="#">Functions</a></li>
+                    <li><a href="#">JSON</a></li>
+                    <li><a href="#">Async</a></li>
+                    <li><a href="#">HTML DOM</a></li>
+                    <li><a href="#">Browser BOM</a></li>
+                    <li><a href="#">JS vs jQuery</a></li>
+                    <li><a href="#">Graphics</a></li>
+                    </div>
+                </div>
+            </div>
+            <div id="logo">
+                <a onclick="openSidebar()">&#9776; JavaScript</a>
+            </div>
+            <div id = "about">
+                <a href="file:///D:/WEB/index.html" >Main Info</a>
+                <a href="#" onclick="slowScroll('#main')">Skills</a>
+                <a href="#" onclick="slowScroll('#contact')">Contacts</a>
+            </div>
+        </header>
+        
+        <div id="top">
+            <h1>Programming</h1>
+            <h3>the best thing!</h3>
+        </div>
+        <div id="main">
+            <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+            <h2>JavaScript Can Change HTML Content</h2>
+            <p>One of many JavaScript HTML methods is getElementById().</p>
+            <p>The example below &quot;finds&quot; an HTML element (with id=&quot;demo&quot;), 
+                and changes the element content (innerHTML) to &quot;Hello JavaScript&quot;(JavaScript accepts both double and single quotes):</p>
+            <p>Example:</p>
+            <p style="background-color:#ffffe6">document.getElementById("demo").innerHTML = "Hello JavaScript";</p>
+            <p style="background-color:#ffffe6">document.getElementById('demo').innerHTML = 'Hello JavaScript';</p>
+            <h2>JavaScript Can Change HTML Attribute Values</h2>
+            <p>In this example JavaScript changes the value of the src (source) attribute of an &lt;img&gt; tag:</p>
+            <button onclick="document.getElementById('myImage').src='http://upbyte.net/picture/demo/pic_bulbon.gif'">Turn on the light</button>
+            <img id="myImage" src="http://upbyte.net/picture/demo/pic_bulboff.gif" style="width:100px">
+            <button onclick="document.getElementById('myImage').src='http://upbyte.net/picture/demo/pic_bulboff.gif'">Turn off the light</button>
+            <h2>JavaScript Can Change HTML Styles (CSS)</h2>
+            <p>Changing the style of an HTML element, is a variant of changing an HTML attribute:</p>
+            <p>Example:</p>
+            <p style="background-color:#ffffe6">document.getElementById("demo").style.fontSize = "35px";</p>
+            <h2>JavaScript Can Hide HTML Elements</h2>
+            <p>Hiding HTML elements can be done by changing the display style:</p>
+            <p>Example:</p>
+            <p style="background-color:#ffffe6"> document.getElementById("demo").style.display = "none";</p>
+            <h2>JavaScript Can Show HTML Elements</h2>
+            <p>Showing hidden HTML elements can also be done by changing the display style:</p>
+            <p>Example:</p>
+            <p style="background-color:#ffffe6">document.getElementById("demo").style.display = "block";</p>
+        </div>
+        <footer>
+            <div id="contact" class="footer-contacts">
+                <h3>Feedback</h3>
+                <p>This website dedicated to WEB classes and should be shared. Then idk what to write it's just for making more text right?</p>
+                    <a href="https://www.facebook.com/" class="fa fa-facebook-official w3-hover-opacity"></a>
+                    <a href="https://www.instagram.com/erho_it.in/" class="fa fa-instagram w3-hover-opacity"></a>
+                    <a href="https://twitter.com/home" class="fa fa-twitter w3-hover-opacity"></a>
+            </div>
+            <div class="footer-bottom">
+                <p>copyright &copy;2022 ITassistant. Designed by: Nargiz Azat, Erzhanat Toleubay.</p>
+            </div>
+        </footer>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+            function slowScroll(id){
+             $('html, body').animate({
+            scrollTop:$(id).offset().top
+             }, 1000);
+         }
+
+         $(document).on("scroll", function (){
+           if($(window).scrollTop() === 0)
+           $("header").removeClass("fixed");
+           else
+           $("header").attr("class","fixed");
+         });
+            var mybutton = document.getElementById("myBtn");
+            window.onscroll = function() {scrollFunction()};
+            function scrollFunction() {
+                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
+            }
+            function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+
+            function openSidebar() {
+                document.getElementById("mySidebar").style.width = "250px";
+                document.getElementById("main").style.marginLeft = "250px";
+                document.getElementById("about").style.marginLeft = "250px";
+                var audio = document.getElementById("audio");
+                audio.play();
+                function playAudio(url) {
+                    new Audio(url).play();
+                }
+            }
+
+            function closeSidebar() {
+                document.getElementById("mySidebar").style.width = "0";
+                document.getElementById("main").style.marginLeft = "0";
+                document.getElementById("about").style.marginLeft = "0";
+                var audio = document.getElementById("audio");
+                audio.play();
+                function playAudio(url) {
+                    new Audio(url).play();
+                }
+            }
+
+            function finder() {
+                var input, filter, div, li, a, i;
+                input = document.getElementById("mySearchbar");
+                filter = input.value.toUpperCase();
+                div = document.getElementById("mySearches");
+                li = div.getElementsByTagName("li");
+                for (i = 0; i < li.length; i++) {
+                    a = li[i].getElementsByTagName("a")[0];
+                    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        li[i].style.display = "";
+                        } else {
+                            li[i].style.display = "none";
+                    }
+                }
+            }
+            var modal01 = document.getElementById("myModal1");
+            var img01 = document.getElementById("Image1");
+            var modalImg01 = document.getElementById("img01");
+            img01.onclick = function(){
+                modal01.style.display = "block";
+                modalImg01.src = this.src;
+                }
+                var span01 = document.getElementsByClassName("close")[0];
+                span01.onclick = function() { 
+                    modal01.style.display = "none";
+                    }
+            var modal02 = document.getElementById("myModal2");
+            var img02 = document.getElementById("Image2");
+            var modalImg02 = document.getElementById("img02");
+            img02.onclick = function(){
+                modal02.style.display = "block";
+                modalImg02.src = this.src;
+                }
+                var span02 = document.getElementsByClassName("close")[1];
+                span02.onclick = function() { 
+                    modal02.style.display = "none";
+                    }
+            var modal03 = document.getElementById("myModal3");
+            var img03 = document.getElementById("Image3");
+            var modalImg03 = document.getElementById("img03");
+            img03.onclick = function(){
+                modal03.style.display = "block";
+                modalImg03.src = this.src;
+                }
+                var span03 = document.getElementsByClassName("close")[2];
+                span03.onclick = function() { 
+                    modal03.style.display = "none";
+                    }
+        </script>
+    </body>
+</html>
